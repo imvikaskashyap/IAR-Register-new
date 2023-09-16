@@ -36,29 +36,47 @@ const PageTwo = ({onButtonClick}) => {
               />
             </div>
             <div className="mv3">
-              <label className="db lh-copy f6 mb1" htmlFor="workspace-url" style={{textAlign: 'left'}}>
-                Workspace URL
-                <span className="ml1" style={{ color: "#C0C0C0" }}>
-                  {" "}
-                  (optional)
-                </span>
-              </label>
-              <div className="center urlButton br2 mt1">
-              <button class="dropbtn urlInput f6 br2 ph2 pv2">www.eden.com/</button>
-              <input
-                className="f6 ph3 pv2 dib br2 black w-100"
-                type="url"
-                name="workspace-url"
-                id="workspace-url"
-                placeholder="Example"
-                style={{
-                  borderStyle: "solid",
-                  borderWidth: "1px",
-                  borderColor: "#EAEEF5",
-                }}
-              />
-              </div>
-            </div>
+            <label
+              className="db lh-copy f6 mb1"
+              htmlFor="display-name"
+              style={{ textAlign: "left" }}
+            >
+         Company Name
+            </label>
+            <input
+              className="f6 br2 ph3 pv2 mb2 dib black w-100"
+              type="text"
+              name="display-name"
+              id="display-name"
+              placeholder="Steve"
+              style={{
+                borderStyle: "solid",
+                borderWidth: "1px",
+                borderColor: "#EAEEF5",
+              }}
+            />
+          </div>
+          <div className="mv3">
+            <label
+              className="db lh-copy f6 mb1"
+              htmlFor="display-name"
+              style={{ textAlign: "left" }}
+            >
+           Department 
+            </label>
+            <input
+              className="f6 br2 ph3 pv2 mb2 dib black w-100"
+              type="text"
+              name="display-name"
+              id="display-name"
+              placeholder="Steve"
+              style={{
+                borderStyle: "solid",
+                borderWidth: "1px",
+                borderColor: "#EAEEF5",
+              }}
+            />
+          </div>
           </fieldset>
           <div className="">
             <input

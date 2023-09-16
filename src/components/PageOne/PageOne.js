@@ -18,7 +18,7 @@ const PageOne = ({ onButtonClick}) => {
               htmlFor="full-name"
               style={{ textAlign: "left" }}
             >
-             Country
+             Employee ID
             </label>
             <input
               className="f6 br2 ph3 pv2 mb2 dib black w-100"
@@ -26,7 +26,7 @@ const PageOne = ({ onButtonClick}) => {
               name="full-name"
               id="full-name"
               size="30"
-              placeholder="Steve Jobs"
+              placeholder="Your ID"
               style={{
                 borderStyle: "solid",
                 borderWidth: "1px",
@@ -40,14 +40,14 @@ const PageOne = ({ onButtonClick}) => {
               htmlFor="display-name"
               style={{ textAlign: "left" }}
             >
-            State
+            Password
             </label>
             <input
               className="f6 br2 ph3 pv2 mb2 dib black w-100"
               type="text"
               name="display-name"
               id="display-name"
-              placeholder="Steve"
+              placeholder="Password"
               style={{
                 borderStyle: "solid",
                 borderWidth: "1px",
@@ -55,48 +55,7 @@ const PageOne = ({ onButtonClick}) => {
               }}
             />
           </div>
-          <div className="mv3">
-            <label
-              className="db lh-copy f6 mb1"
-              htmlFor="display-name"
-              style={{ textAlign: "left" }}
-            >
-         Company Name
-            </label>
-            <input
-              className="f6 br2 ph3 pv2 mb2 dib black w-100"
-              type="text"
-              name="display-name"
-              id="display-name"
-              placeholder="Steve"
-              style={{
-                borderStyle: "solid",
-                borderWidth: "1px",
-                borderColor: "#EAEEF5",
-              }}
-            />
-          </div>
-          <div className="mv3">
-            <label
-              className="db lh-copy f6 mb1"
-              htmlFor="display-name"
-              style={{ textAlign: "left" }}
-            >
-           Department 
-            </label>
-            <input
-              className="f6 br2 ph3 pv2 mb2 dib black w-100"
-              type="text"
-              name="display-name"
-              id="display-name"
-              placeholder="Steve"
-              style={{
-                borderStyle: "solid",
-                borderWidth: "1px",
-                borderColor: "#EAEEF5",
-              }}
-            />
-          </div>
+       
         </fieldset>
         <div>
           <input
@@ -107,7 +66,7 @@ const PageOne = ({ onButtonClick}) => {
               backgroundColor: "#664DE5",
             }}
             type="submit"
-            value="Next"
+            value="Login"
             onClick={() => onButtonClick("pagetwo")}
           />
         </div>
