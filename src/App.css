@@ -1,12 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&display=swap");
+
 .App {
-  text-align: center;
-  /* background-image: linear-gradient(to right, #fc5c7d, #6a82fb); */
+	text-align: center;
+	font-family: "Poppins", sans-serif;
+	/* background-image: linear-gradient(to right, #fc5c7d, #6a82fb); */
 }
 
-.center{
-  display: flex;
-  justify-content: center;
+.center {
+	display: flex;
+	justify-content: center;
 }
-
-
-
