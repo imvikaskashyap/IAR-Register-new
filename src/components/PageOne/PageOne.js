@@ -3,9 +3,10 @@ import axios from "axios";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./PageOne.css";
-const url = process.env.REACT_APP_API
+// const url = process.env.REACT_APP_API
+const url = "https://onegrcirabackend.onrender.com"
 
-const PageOne = () => {
+const PageOne = ({onButtonClick}) => {
   const navigate = useNavigate();
   const [empid, setEmpid] = useState("");
   const [password, setPassword] = useState("");
@@ -30,7 +31,7 @@ const PageOne = () => {
           "authToken",
           JSON.stringify(userLog.data.authToken)
         );
-        navigate("/pagetwo");
+        onButtonClick("pagetwo");
       } catch (err) {
         console.log(err);
       }
@@ -100,7 +101,7 @@ const PageOne = () => {
         </fieldset>
         <div>
           <button
-            className="f6 grow br2 ph3 pv2 mb2 dib white"
+            className="f6 grow br2 ph3 pv2 mb4 dib white"
             style={{
               borderStyle: "none",
               width: "100%",

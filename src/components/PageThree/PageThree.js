@@ -1,79 +1,69 @@
-import React, {useState} from "react";
-import user from "./user.png";
-import users from "./users.png";
+import React, { useState } from "react";
+import Select from "react-select";
 import "./PageThree.css";
+import { useData } from "../DataProvider";
 
-const PageThree = ({onButtonClick}) => {
+const options = [
+  { value: "myself1", label: "For Myself1" },
+  { value: "team2", label: "With My Team2" },
+  { value: "myself3", label: "For Myself3" },
+  { value: "team4", label: "With My Team4" },
+  { value: "myself5", label: "For Myself5" },
+  { value: "team6", label: "With My Team6" },
+  { value: "myself7", label: "For Myself7" },
+  { value: "team8", label: "With My Team8" },
+];
 
-  const [singleUser, setSingleUser] = useState(false)
-  
+
+const PageThree = ({ onButtonClick, inputData }) => {
+  const [singleUser, setSingleUser] = useState(false);
+  const [multiUser, setMultiUser] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const { data } = useData();
+
   const onClickSingleUser = () => {
-    setSingleUser(prevSingleUser => !prevSingleUser)
-  }
+    setSingleUser((prevSingleUser) => !prevSingleUser);
+  };
 
-  const [multiUser, setMultiUser] = useState(false)
-  
   const onClickMultiUser = () => {
-    setMultiUser(prevMultiUser => !prevMultiUser)
+    setMultiUser((prevMultiUser) => !prevMultiUser);
+  };
+
+  const handleOptionChange = (selectedOption) => {
+    setSelectedOption(selectedOption);
+  };
+  const handleSubmit = () => {
+    console.log(data);
+    onButtonClick("pagefour");
   }
 
-    return (
-      <main
-        className="pt5 black-80"
-        style={{ maxWidth: "50%", maxHeight: "25%", margin: "auto" }}
-      >
-        <h2>How are you planning to use Eden?</h2>
-        <p style={{ color: "#C0C0C0" }}>
-          We'll streamline your setup experience accordingly.
-        </p>
-        <div
-          className="center ph4 selectionDiv"
-          style={{ width: "80%", height: "80%" }}
-        >
-          <div className="mw5 bg-white br3 pa3 mv3 ba dib b--black-10 ma3 clicked"
-            style={{borderColor: singleUser? '#664DE5' : '#EAEEF5' }}
-            onClick={onClickSingleUser} 
-          >
-            <img
-              src={user}
-              className="h2 w2"
-              title="single user icon"
-              alt="user-icon"
-            />
-            <h1 className="f4 pl2 pr2">For myself</h1>
-            <p className="lh-copy f6 black-70 pl2 pr2">
-              Write better. Think more clearly. Stay organized.
-            </p>
-          </div>
-          <div className="mw5 bg-white br3 pa3 mv3 ba dib b--black-10 ma3 clicked"
-           style={{borderColor: multiUser? '#664DE5' : '#EAEEF5' }}
-           onClick={onClickMultiUser}
-            >
-            <img
-              src={users}
-              className="h2 w2"
-              title="multi user icon"
-              alt="users-icon"
-            />
-            <h1 className="f4 pl2 pr2">With my team</h1>
-            <p className="lh-copy  f6 black-70 pl2 pr2 desc">
-              Wikis, docs, tasks and projects, all in one place.
-            </p>
-          </div>
-        </div>
-        <input
-          className="f6 grow br2 ph3 pv2 mb2 dib white submitButton"
-          style={{
-            borderStyle: "none",
-            width: "66%",
-            backgroundColor: "#664DE5",
-          }}
-          type="submit"
-          value="Create Workspace"
-          onClick={() => onButtonClick("pagefour")}
-        />
-      </main>
-    );
-}
+  return (
+    <main className="pt5 black-80" style={{ maxWidth: "50%", maxHeight: "25%", margin: "auto" }}>
+      <h2>How are you planning to use NUK 9?</h2>
+      <p style={{ color: "#C0C0C0" }}>We'll streamline your setup experience accordingly.</p>
+    
+        <Select
+        className="multiSelect"
+        options={options}
+        value={selectedOption}
+        onChange={handleOptionChange} 
+        isMulti
+        placeholder="Select Usage"
+      />
+      <input
+        className="f6 grow br2 ph3 pv2 mb4 mt4 dib white submitButton"
+        style={{
+          borderStyle: "none",
+          width: "66%",
+          backgroundColor: "#664DE5",
+        }}
+        type="submit"
+        value="Create Workspace"
+        onClick={handleSubmit}
+      />
+    </main>
+  );
+};
 
 export default PageThree;
+
